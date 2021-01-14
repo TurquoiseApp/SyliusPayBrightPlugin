@@ -1,0 +1,4 @@
+suites:
+    main:
+        namespace: Turquoise\SyliusPayBrightPlugin
+        psr4_prefix: Turquoise\SyliusPayBrightPlugin
