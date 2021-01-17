@@ -3,11 +3,11 @@
 <container xmlns="http://symfony.com/schema/dic/services" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
     <services>
         <service id="turquoise.paybright" class="Payum\Core\Bridge\Symfony\Builder\GatewayFactoryBuilder">
-            <argument>Turquoise\SyliusPayBrightPlugin\Payum\SyliusPaymentGatewayFactory</argument>
+            <argument>Turquoise\SyliusPayBrightPlugin\Payum\PayBrightPaymentGatewayFactory</argument>
             <tag name="payum.gateway_factory_builder" factory="paybright" />
         </service>
 
-        <service id="Turquoise\SyliusPayBrightPlugin\Form\Type\SyliusGatewayConfigurationType">
+        <service id="Turquoise\SyliusPayBrightPlugin\Form\Type\PayBrightGatewayConfigurationType">
             <tag name="sylius.gateway_configuration_type" type="paybright" label="PayBright" />
             <tag name="form.type" />
         </service>

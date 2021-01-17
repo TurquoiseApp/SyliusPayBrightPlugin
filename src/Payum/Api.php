@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Turquoise\SyliusPayBrightPlugin\Payum;
 
-final class SyliusApi
+final class Api
 {
     /** @var string */
     private $apiKey;

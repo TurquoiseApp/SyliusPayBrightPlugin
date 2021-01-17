@@ -8,7 +8,7 @@ use Turquoise\SyliusPayBrightPlugin\Payum\Action\StatusAction;
 use Payum\Core\Bridge\Spl\ArrayObject;
 use Payum\Core\GatewayFactory;
 
-final class SyliusPaymentGatewayFactory extends GatewayFactory
+final class PayBrightPaymentGatewayFactory extends GatewayFactory
 {
     protected function populateConfig(ArrayObject $config): void
     {
@@ -19,7 +19,7 @@ final class SyliusPaymentGatewayFactory extends GatewayFactory
         ]);
 
         $config['payum.api'] = function (ArrayObject $config) {
-            return new SyliusApi($config['api_key'], $config['api_token']);
+            return new Api($config['api_key'], $config['api_token']);
         };
     }
 }
