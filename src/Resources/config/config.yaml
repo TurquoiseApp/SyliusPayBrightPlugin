@@ -1,0 +1,7 @@
+sylius_ui:
+    events:
+        sylius.shop.product.show.right_sidebar:
+            blocks:
+                paybright_credit:
+                    template: "@TurquoiseSyliusPayBrightPlugin/Product/Show/_credit.html.twig"
+                    priority: 25

@@ -16,7 +16,9 @@ final class TurquoiseSyliusPayBrightExtension extends Extension
     {
         $config = $this->processConfiguration($this->getConfiguration([], $container), $config);
         $loader = new XmlFileLoader($container, new FileLocator(__DIR__ . '/../Resources/config'));
+        $apiUrl = sprintf('https://%s.paybright.com/CheckOut/ApplicationForm.aspx', true ? 'sandbox' : 'app');
 
+        $container->setParameter('turquoise.sylius.paybright.api_url', $apiUrl);
         $loader->load('services.xml');
     }
 

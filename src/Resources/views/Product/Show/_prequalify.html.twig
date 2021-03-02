@@ -1,0 +1,7 @@
+<script id="pb_prequalify" src="https://sandbox.paybright.com/dist/sdk.js?public_key=3djS2T7pTG8O2S8yLG2hR3AIS5gRZpjKwDXPpQVTgOWqWtUfUm&financedamount=$579.99"></script>
+<script>
+    pb_prequalify_init({
+        lang: "{{ app.request.locale|slice(0, 2) == 'fr' ? 'fr' : 'en' }}",
+    });
+</script>
+<div class="paybright-widget-container"></div>
