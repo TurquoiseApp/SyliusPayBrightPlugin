@@ -1,4 +1,7 @@
-<script id="pb_prequalify" src="https://sandbox.paybright.com/dist/sdk.js?public_key=3djS2T7pTG8O2S8yLG2hR3AIS5gRZpjKwDXPpQVTgOWqWtUfUm&financedamount=$579.99"></script>
+{% set variant = product|sylius_resolve_variant %}
+{% set channelPricing = variant.channelPricings.first %}
+
+<script id="pb_prequalify" src="https://sandbox.paybright.com/dist/sdk.js?public_key=3djS2T7pTG8O2S8yLG2hR3AIS5gRZpjKwDXPpQVTgOWqWtUfUm&financedamount=${{ (channelPricing.price - channelPricing.discount) / 100 }}"></script>
 <script>
     pb_prequalify_init({
         lang: "{{ app.request.locale|slice(0, 2) == 'fr' ? 'fr' : 'en' }}",

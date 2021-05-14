@@ -61,7 +61,7 @@ final class CaptureAction implements ActionInterface, ApiAwareInterface, Gateway
 
             $payment->setDetails([ 'status' => $status ]);
         } else {
-            $response = $this->client->request('POST', 'https://sandbox.paybright.com/CheckOut/ApplicationForm.aspx', [
+            $response = $this->client->request('POST', 'https://app.paybright.com/CheckOut/ApplicationForm.aspx', [
                 'body' => http_build_query($this->preparePayBrightData($request)),
             ]);
 
